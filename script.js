@@ -57,6 +57,7 @@ function direction(event)
 //animation
 function draw()
 {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   for( let i=0; i< snake.length ; i++)
   {
     ctx.fillStyle = 'white';
