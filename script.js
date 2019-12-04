@@ -20,8 +20,8 @@ snake[0] = {
 //food
 
 let food = {
-  x : Math.floor(Math.random()*26) +1 * box,
-  y : Math.floor(Math.random()*23) +1  * box
+  x : Math.floor(Math.random()*26+1) * box,
+  y : Math.floor(Math.random()*23+1)  * box
 }
 
 //Score
@@ -35,19 +35,19 @@ document.addEventListener("keydown",direction);
 
 function direction(event)
 {
-  if(event.keyCode == 37 && d!="RIGHT")
+  if(event.keyCode == 37 && d !="RIGHT")
   {
     d = "LEFT";
   }
-  else if(event.keyCode == 38 && d!="DOWN")
+  else if(event.keyCode == 38 && d !="DOWN")
   {
     d = "UP";
   }
-  else if(event.keyCode == 39 && d!="LEFT")
+  else if(event.keyCode == 39 && d !="LEFT")
   {
     d = "RIGHT";
   }
-  else if(event.keyCode == 40 && d!="UP")
+  else if(event.keyCode == 40 && d !="UP")
   {
     d = "DOWN";
   }
@@ -81,8 +81,26 @@ function draw()
   if( d == "RIGHT") snakeX +=box;
   if( d == "DOWN") snakeY +=box;
 
+  //increase snake size
+  if(snakeX == food.x && snakeY == food.y)
+  {
+    score++;
+    food = {
+      x : Math.floor(Math.random()*25+1)  * box,
+      y : Math.floor(Math.random()*22+1) * box
+    }
+  }
+  else {
+    //remove tail
+    snake.pop();
+  }
 
+  //game over
 
+  if(snakeX < 15 || snakeX >25 * box || snakeY < 5 || snakeY > 22 * box)
+  {
+    clearInterval(game);
+  }
   //NEW HEAD
 
   let newHead = {
@@ -92,13 +110,12 @@ function draw()
 
   snake.unshift(newHead);
 
-  //remove tail
-  snake.pop();
+
   //display score output
   var snakeScore=document.getElementById('score');
-  snakeScore.innerHTML="score";
+  snakeScore.innerHTML=score;
 
-
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 }
 
