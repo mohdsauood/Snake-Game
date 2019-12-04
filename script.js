@@ -6,7 +6,7 @@ const ctx = cvs.getContext("2d");
 const box=30;
 
 //background color temporary
-ctx.fillStyle = 'rgba(255, 255, 255, 0.31)';
+// ctx.fillStyle = 'rgba(255, 255, 255, 0.31)';
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 //Snake
@@ -62,13 +62,14 @@ function draw()
     ctx.fillStyle = 'white';
     ctx.fillRect(snake[i].x,snake[i].y,box,box);
   }
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
   //circle food
-  ctx.fillStyle = "white";
-  ctx.beginPath();
-  ctx.arc(food.x,food.y,10,0, 2* Math.PI);
-  ctx.fill();
-  // ctx.fillStyle = 'white';
-  // ctx.fillRect(food.x,food.y,15,15);
+  // ctx.fillStyle = "white";
+  // ctx.beginPath();
+  // ctx.arc(food.x,food.y,15,2, 3* Math.PI);
+  // ctx.fill();
+  ctx.fillStyle = 'white';
+  ctx.fillRect(food.x,food.y,21,21);
 
 
   //old head position
@@ -115,7 +116,7 @@ function draw()
   var snakeScore=document.getElementById('score');
   snakeScore.innerHTML=score;
 
-  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 
 }
 
