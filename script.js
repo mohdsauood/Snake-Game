@@ -60,7 +60,7 @@ function draw()
   for( let i=0; i< snake.length ; i++)
   {
     ctx.fillStyle = 'white';
-    ctx.fillRect(snake[i].x,snake[i].y,4*box,box);
+    ctx.fillRect(snake[i].x,snake[i].y,box,box);
   }
   //circle food
   ctx.fillStyle = "white";
@@ -76,10 +76,10 @@ function draw()
   let snakeY = snake[0].y;
 
   //direction
-  if( d = "LEFT") snakeX -=box;
-  if( d = "UP") snakeY -=box;
-  if( d = "RIGHT") snakeX +=box;
-  if( d = "DOWN") snakeY +=box;
+  if( d == "LEFT") snakeX -=box;
+  if( d == "UP") snakeY -=box;
+  if( d == "RIGHT") snakeX +=box;
+  if( d == "DOWN") snakeY +=box;
 
 
 
@@ -96,7 +96,7 @@ function draw()
   snake.pop();
   //display score output
   var snakeScore=document.getElementById('score');
-  snakeScore.innerHTML=score;
+  snakeScore.innerHTML="score";
 
 
 
