@@ -112,7 +112,7 @@ footer h4 a
 
 footer h4 a span
 {
-  -webkit-animation:colorchange 4s linear 0s infinite alternate;
+  -webkit-animation:colorchange 4s linear -2s infinite alternate;
 }
 
 
