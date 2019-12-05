@@ -69,7 +69,7 @@ snake[0] = {
 //food
 
 let food = {
-  x : Math.floor(Math.random()*26+1) * box,
+  x : Math.floor(Math.random()*25+1) * box,
   y : Math.floor(Math.random()*22+1)  * box
 }
 
@@ -82,6 +82,17 @@ let d;
 
 document.addEventListener("keydown",direction);
 
+//create playagainbutton
+
+let pbutton=document.getElementById('playagain');
+
+pbutton.addEventListener('click',function(){
+  maincolor='pink';
+window.location.reload();
+});
+//create gameover message label
+let gameMessage=document.getElementById('game-message');
+//keyboard press events
 function direction(event)
 {
   if(event.keyCode == 37 && d !="RIGHT")
@@ -103,6 +114,15 @@ function direction(event)
   {
     down.play();
     d = "DOWN";
+  }
+}
+
+//spacebar restartgamefunction
+function restartgame(event)
+{
+  if(event.keyCode == 32)
+  {
+    window.location.reload();
   }
 }
 
@@ -196,8 +216,11 @@ function draw()
 
   if(snakeX < box || snakeX > 25 * box || snakeY < 5 || snakeY > 22 * box || collision(newHead,snake))
   {
+    pbutton.style.setProperty('display',"block");
+    gameMessage.style.setProperty('display',"block");
     clearInterval(game);
     dead.play();
+    document.addEventListener("keydown",restartgame);
   }
 
   snake.unshift(newHead);
