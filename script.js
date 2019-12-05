@@ -9,6 +9,7 @@ const box=30;
 // ctx.fillStyle = 'rgba(255, 255, 255, 1)';
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
+
 //Snake
 
 let snake = [];
@@ -71,6 +72,26 @@ function collision(nhead,array)
 function draw()
 {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  //create border
+
+  // ctx.beginPath();
+  // ctx.moveTo(0,30);
+  // ctx.lineTo(802,30);
+  // ctx.moveTo(0,690);
+  // ctx.lineTo(802,690);
+  // ctx.moveTo(30,0);
+  // ctx.lineTo(30,702);
+  // ctx.moveTo(783,0);
+  // ctx.lineTo(783,702);
+  // ctx.strokeStyle = 'white';
+  // ctx.stroke();
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+  ctx.fillRect(0,0,802,30);
+  ctx.fillRect(0,690,802,30);
+  ctx.fillRect(0,0,30,702);
+  ctx.fillRect(783,0,30,702);
+
   for( let i=0; i< snake.length ; i++)
   {
     ctx.fillStyle = 'white';
