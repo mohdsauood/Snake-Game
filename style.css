@@ -60,6 +60,15 @@ body
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 1.1rem;
+  animation:blinkingText 1s linear 0.9s infinite;
+}
+
+@keyframes blinkingText{
+    0%{     color: var(--bodycolor);    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: var(--bodycolor);    }
 }
 
 .flex-container
@@ -112,13 +121,13 @@ footer h4 a span
       0% {
         color: #08d9d6;
       }
-      20% {
+      35% {
         color: #ff2e63;
       }
-      40% {
+      75% {
         color: white;
       }
-      80% {
+      100% {
         color: #57ff24;
       }
     }
