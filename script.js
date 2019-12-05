@@ -9,7 +9,40 @@ const box=30;
 // ctx.fillStyle = 'rgba(255, 255, 255, 1)';
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
+//create color variable
+let maincolor='#57ff24';
 
+//get color buttons
+let b1=document.getElementById('c1button');
+//get bodymain color
+let root=document.documentElement;
+//set body and button colors
+b1.addEventListener("click",function()
+{
+  maincolor="white";
+   root.style.setProperty('--bodycolor',"white");
+});
+
+let b2=document.getElementById('c2button');
+b2.addEventListener("click",function()
+{
+  maincolor="#08d9d6";
+  root.style.setProperty('--bodycolor',"#08d9d6");
+});
+
+let b3=document.getElementById('c3button');
+b3.addEventListener("click",function()
+{
+  maincolor="#ff2e63";
+  root.style.setProperty('--bodycolor',"#ff2e63");
+});
+
+let b4=document.getElementById('c4button');
+b4.addEventListener("click",function()
+{
+  maincolor="#57ff24";
+  root.style.setProperty('--bodycolor',"#57ff24");
+});
 //Snake
 
 let snake = [];
@@ -86,7 +119,7 @@ function draw()
   // ctx.strokeStyle = 'white';
   // ctx.stroke();
 
-  ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+  ctx.fillStyle =maincolor;
   ctx.fillRect(0,0,802,30);
   ctx.fillRect(0,690,802,30);
   ctx.fillRect(0,0,30,702);
@@ -94,7 +127,7 @@ function draw()
 
   for( let i=0; i< snake.length ; i++)
   {
-    ctx.fillStyle = 'white';
+    // ctx.fillStyle = 'white';
     ctx.fillRect(snake[i].x,snake[i].y,box,box);
   }
   // ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -103,7 +136,7 @@ function draw()
   // ctx.beginPath();
   // ctx.arc(food.x,food.y,15,2, 3* Math.PI);
   // ctx.fill();
-  ctx.fillStyle = 'white';
+  // ctx.fillStyle = 'white';
   ctx.fillRect(food.x,food.y,21,21);
 
 
