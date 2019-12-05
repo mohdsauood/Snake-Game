@@ -200,7 +200,7 @@ footer h4 a span
   .flex-container
   {
     position: absolute;
-    bottom:15%;
+    bottom:10%;
     width: 100%;
   }
 }
