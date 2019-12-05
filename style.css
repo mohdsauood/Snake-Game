@@ -12,6 +12,7 @@ body
 {
   background-color: #000000;
   color: var(--bodycolor);
+  font-family: 'Press Start 2P', cursive;
 }
 
 .container
@@ -25,15 +26,15 @@ body
 {
   padding-bottom: 5px;
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .button
 {
   width: 30px;
   height: 30px;
-  margin-top: 10px 30px;
-  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
 }
 .color1
 {
@@ -51,3 +52,72 @@ body
 {
   background-color: #57ff24;
 }
+
+.container h3
+{
+  display: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.flex-container
+{
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  width:200px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.game-message
+{
+  width: 400px;
+  margin: 0 auto;
+  display: none;
+}
+.game-message h1
+{
+  font-size: 40px;
+}
+.container label
+{
+  font-size:1.5rem;
+}
+footer
+{
+  margin: 20px auto;
+  width: 400px;
+}
+footer h4 a
+{
+
+  bottom: 0px;
+  text-decoration: none;
+  color: var(--bodycolor);
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+footer h4 a span
+{
+  -webkit-animation:colorchange 4s linear 0s infinite alternate;
+}
+
+
+@-webkit-keyframes colorchange
+    {
+      0% {
+        color: #08d9d6;
+      }
+      20% {
+        color: #ff2e63;
+      }
+      40% {
+        color: white;
+      }
+      80% {
+        color: #57ff24;
+      }
+    }
