@@ -4,16 +4,26 @@
     <meta charset="utf-8">
     <title>Snake</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="c1button" class="color1 button"></div>
-    <div id="c2button" class="color2 button"></div>
-    <div id="c3button" class="color3 button"></div>
-    <div id="c4button" class="color4 button"></div>
-    <div class="container">
-      <h2>Score</h2><label id="score" > Testing</label>
-      <canvas id="canvas" width="802" height="702"></canvas>
+    <div class="flex-container">
+      <div id="c1button" class="color1 button"></div>
+      <div id="c2button" class="color2 button"></div>
+      <div id="c3button" class="color3 button"></div>
+      <div id="c4button" class="color4 button"></div>
     </div>
+    <div id="game-message" class="game-message">
+      <h1>GAME OVER</h1>
+    </div>
+    <div class="container">
+      <h2>Score </h2><label id="score" > Testing</label>
+      <canvas id="canvas" width="802" height="702"></canvas>
+      <h3 id="playagain">Press "Space Bar" or Click here to play again</h3>
+    </div>
+    <footer>
+      <h4><a href="https://github.com/mohdsauood">Created By<span> Mohamed Sauood</span></a></h4>
+    </footer>
     <script src="script.js"></script>
 
   </body>
