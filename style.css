@@ -60,7 +60,7 @@ body
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 1.1rem;
-  animation:blinkingText 1s linear 0.9s infinite;
+  animation:blinkingText -2s linear 1s infinite;
 }
 
 @keyframes blinkingText{
