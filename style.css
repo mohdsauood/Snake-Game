@@ -87,13 +87,14 @@ body
 }
 footer
 {
-  margin: 20px auto;
+  position:fixed;
+  bottom:0px;
+  margin-left: 40%;
+  margin-right: 40%;
   width: 400px;
 }
 footer h4 a
 {
-
-  bottom: 0px;
   text-decoration: none;
   color: var(--bodycolor);
   text-transform: uppercase;
