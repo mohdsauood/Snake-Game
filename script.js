@@ -21,7 +21,7 @@ snake[0] = {
 
 let food = {
   x : Math.floor(Math.random()*26+1) * box,
-  y : Math.floor(Math.random()*23+1)  * box
+  y : Math.floor(Math.random()*22+1)  * box
 }
 
 //Score
@@ -53,6 +53,19 @@ function direction(event)
   }
 }
 
+//collision function
+
+function collision(nhead,array)
+{
+  for(let i=0; i < array.length; i++)
+  {
+    if(nhead.x == array[i].x && nhead.y == array[i].y)
+    {
+      return true;
+    }
+  }
+  return false;
+}
 
 //animation
 function draw()
@@ -97,17 +110,19 @@ function draw()
     snake.pop();
   }
 
-  //game over
-
-  if(snakeX < box || snakeX > 25 * box || snakeY < 5 || snakeY > 22 * box )
-  {
-    clearInterval(game);
-  }
   //NEW HEAD
 
   let newHead = {
     x : snakeX,
     y : snakeY
+  }
+
+
+  //game over
+
+  if(snakeX < box || snakeX > 25 * box || snakeY < 5 || snakeY > 22 * box || collision(newHead,snake))
+  {
+    clearInterval(game);
   }
 
   snake.unshift(newHead);
