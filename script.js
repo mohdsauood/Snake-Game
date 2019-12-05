@@ -6,7 +6,7 @@ const ctx = cvs.getContext("2d");
 const box=30;
 
 //background color temporary
-// ctx.fillStyle = 'rgba(255, 255, 255, 0.31)';
+// ctx.fillStyle = 'rgba(255, 255, 255, 1)';
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 //Snake
@@ -99,7 +99,7 @@ function draw()
 
   //game over
 
-  if(snakeX < 15 || snakeX >25 * box || snakeY < 5 || snakeY > 22 * box)
+  if(snakeX < box || snakeX > 25 * box || snakeY < 5 || snakeY > 22 * box )
   {
     clearInterval(game);
   }
@@ -116,9 +116,6 @@ function draw()
   //display score output
   var snakeScore=document.getElementById('score');
   snakeScore.innerHTML=score;
-
-
-
 }
 
 //call function every second
