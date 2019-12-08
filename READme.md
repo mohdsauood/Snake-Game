@@ -3,7 +3,7 @@ A Conventional Snake Game developed using pure Javascript.
 
 http://snaky.netlify.com
 
-![alt tag]
+![alt tag](https://github.com/mohdsauood/Snake-Game/blob/master/design.PNG)
 
 ## How It's Made:
 
